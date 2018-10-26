@@ -22,8 +22,8 @@ Se puede correr new, build, etc.
 Por alguna razón el puerto 4200 no me funcionó:    
 `ocker run -u $(id -u) --rm -p 4200:4200 -v "$PWD":/app trion/ng-cli ng serve -host 0.0.0.0`  
 
-así que seguí este tutorial y use el puerto 3000 [tutorial](https://medium.com/@DenysVuika/your-angular-apps-as-docker-containers-471f570a7f2  )
-`docker run -p 3000:80 --rm my-angular-app`  
+así que seguí este [tutorial](https://medium.com/@DenysVuika/your-angular-apps-as-docker-containers-471f570a7f2  )   y use el puerto 3000  
+`docker run -p 3000:80 --rm my-angular-app`    
 Este otro [tutorial](https://mherman.org/blog/dockerizing-an-angular-app/  ) me pareción interesante.     
   
 ## Single page application     
