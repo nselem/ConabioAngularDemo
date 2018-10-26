@@ -6,7 +6,7 @@ Para correr la aplicación hay que ejecutar:
 `docker run -p 3000:80 --rm nselem/conabioangulardemo`  
 Para ver la aplicación hay que ir en el navegador a `localhost:3000`  
 
-Pra trabajar en la producción de la spa (single page application) hice *my-angular-app*, otro github no conectado a docker.
+Pra trabajar en la producción de la spa (single page application) hice [my-angular-app](https://github.com/nselem/my-angular-app), otro github no conectado a docker.
 Puedo pasarle el volumen dist para probar los avances, sin necesidad de mover  nada el Dockerfile.    
 `docker run -p 3000:80 -v mydir/my-angular-app/:/usr/share/nginx/html/. --rm nselem/conabioangulardemo`  
 
