@@ -1,31 +1,32 @@
 # ConabioAngularDemo
 Probando angular apps en docker  
 
-Este es el sitio 
+Desarrollé el contenedor nselem/conabioangulardemo, un constructor automático en DockerHub.    
+Este github solo contiene el codigo del directorio dist que se conecta al contenedor docker con angular. 
+`docker run -p 3000:80 --rm nselem/conabioangulardemo`  
 
-I created nselem/conabioangulardemo, an automated build in DockerHub  
-##
-docker run -p 3000:80 -v /home/nelly/GIT/ConioAngularDemo/code/dist/my-angular-app/:/usr/share/nginx/html/. --rm nselem/conabioangulardemo
-##
-docker run -p 3000:80 -v /home/nelly/GIT/ConioAngularDemo/code/dist/my-angular-app/:/usr/share/nginx/html/. --rm nselem/conabioangulardemo
+Pra trabajar en la producción de la spa (single page application) está my-angular-app, otro github no conectado a docker.
+Puedo pasarle el volumen dist para probar los avances, sin necesidad de mover el docker.  
+`docker run -p 3000:80 -v mydir/my-angular-app/:/usr/share/nginx/html/. --rm nselem/conabioangulardemo`  
 
-## Angular application in docker  
-To build angular apps in angular I found this [tutorial](https://jaxenter.com/build-and-test-angular-apps-using-docker-132371.html)  
-Is a docker that allows to build angular applications  
+Una vez que dist esté listo, lo copio al github conabioangulardemo y docker hace el build automático.  
+
+## Compilar applicaciones Angular usando docker  
+Para compilar angular sin instalarlo (usando un docker) seguí este tutorial [tutorial](https://jaxenter.com/build-and-test-angular-apps-using-docker-132371.html)  
+Puedes usar new, build, etc.   
 `docker run -u $(id -u) --rm -v "$PWD":/app trion/ng-cli ng new MyDemo  `  
-`cd MyDemo`    
-`docker run -u $(id -u) --rm -v "$PWD":/app trion/ng-cli ng build`    
+`cd MyDemo`      
+`docker run -u $(id -u) --rm -v "$PWD":/app trion/ng-cli ng build`     
 
-for some reason port 4200 didn't work for me:    
+Por alguna razón el puerto 4200 no me funcionó:    
 docker run -u $(id -u) --rm -p 4200:4200 -v "$PWD":/app trion/ng-cli ng serve -host 0.0.0.0
 
-so I followed this other [tutorial](https://medium.com/@DenysVuika/your-angular-apps-as-docker-containers-471f570a7f2  )
-And I was able to see my app at port 3000.   
+así que seguí este tutorial y use el puerto 3000 [tutorial](https://medium.com/@DenysVuika/your-angular-apps-as-docker-containers-471f570a7f2  )
 `docker run -p 3000:80 --rm my-angular-app`  
-I also consult how this other [tutorial](https://mherman.org/blog/dockerizing-an-angular-app/  ).   
+Este otro [tutorial](https://mherman.org/blog/dockerizing-an-angular-app/  ) me pareción interesante.     
   
 ## Single page application     
-I is still have to transform the above app in a spa. Currenlty, I'm following this tutorials:    
+Todavía sigo entendiendo las sap, estoy leyendo estos links  
 https://www.nascenia.com/create-single-page-application-using-angularjs/  
 https://www.codeproject.com/Articles/1224654/Single-Page-Application-using-AngularJs-Tutorial  
 https://scotch.io/tutorials/single-page-apps-with-angularjs-routing-and-templating  
