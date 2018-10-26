@@ -13,6 +13,7 @@ docker run -u $(id -u) --rm -p 4200:4200 -v "$PWD":/app trion/ng-cli ng serve -h
 
 so I followed this other [tutorial](https://medium.com/@DenysVuika/your-angular-apps-as-docker-containers-471f570a7f2  )
 And I was able to see my app at port 3000.   
+`docker run -p 3000:80 --rm my-angular-app`  
 I also consult how this other [tutorial](https://mherman.org/blog/dockerizing-an-angular-app/  ).   
   
 ## Single page application     
