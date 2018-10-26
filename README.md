@@ -1,6 +1,12 @@
 # ConabioAngularDemo
 Testing angular app in docker
 
+I created nselem/conabioangulardemo, an automated build in DockerHub  
+##
+docker run -p 3000:80 -v /home/nelly/GIT/ConioAngularDemo/code/dist/my-angular-app/:/usr/share/nginx/html/. --rm nselem/conabioangulardemo
+##
+docker run -p 3000:80 -v /home/nelly/GIT/ConioAngularDemo/code/dist/my-angular-app/:/usr/share/nginx/html/. --rm nselem/conabioangulardemo
+
 ## Angular application in docker  
 To build angular apps in angular I found this [tutorial](https://jaxenter.com/build-and-test-angular-apps-using-docker-132371.html)  
 Is a docker that allows to build angular applications  
