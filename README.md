@@ -1,19 +1,20 @@
 # ConabioAngularDemo
 Probando angular apps en docker  
 
-Desarrollé el contenedor nselem/conabioangulardemo, un constructor automático en DockerHub.    
-Este github solo contiene el codigo del directorio dist que se conecta al contenedor docker con angular. 
+Desarrollé el contenedor nselem/conabioangulardemo, cada vez que actualizo github se actualiza el contenedor con build automático en DockerHub. Este github sólo contiene el codigo del directorio dist que se conecta al contenedor docker con angular. 
+Para correr la aplicación hay que ejecutar:  
 `docker run -p 3000:80 --rm nselem/conabioangulardemo`  
+E ir en el navegador a `localhost:3000`  
 
-Pra trabajar en la producción de la spa (single page application) está my-angular-app, otro github no conectado a docker.
-Puedo pasarle el volumen dist para probar los avances, sin necesidad de mover el docker.  
+Pra trabajar en la producción de la spa (single page application) hice *my-angular-app*, otro github no conectado a docker.
+Puedo pasarle el volumen dist para probar los avances, sin necesidad de mover  nada el Dockerfile.    
 `docker run -p 3000:80 -v mydir/my-angular-app/:/usr/share/nginx/html/. --rm nselem/conabioangulardemo`  
 
-Una vez que dist esté listo, lo copio al github conabioangulardemo y docker hace el build automático.  
+Una vez que dist esté listo, lo copio al github de *conabioangulardemo* y docker hace el build automático.  
 
 ## Compilar applicaciones Angular usando docker  
-Para compilar angular sin instalarlo (usando un docker) seguí este tutorial [tutorial](https://jaxenter.com/build-and-test-angular-apps-using-docker-132371.html)  
-Puedes usar new, build, etc.   
+Para compilar el directorio dist sin instalar angular estoy usando un docker seguí este tutorial [tutorial](https://jaxenter.com/build-and-test-angular-apps-using-docker-132371.html)  
+Se puede correr new, build, etc.   
 `docker run -u $(id -u) --rm -v "$PWD":/app trion/ng-cli ng new MyDemo  `  
 `cd MyDemo`      
 `docker run -u $(id -u) --rm -v "$PWD":/app trion/ng-cli ng build`     
