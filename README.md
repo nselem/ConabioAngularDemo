@@ -4,7 +4,7 @@ Probando angular apps en docker
 Desarrollé el contenedor nselem/conabioangulardemo, cada vez que actualizo github se actualiza el contenedor con build automático en DockerHub. Este github sólo contiene el codigo del directorio dist que se conecta al contenedor docker con angular. 
 Para correr la aplicación hay que ejecutar:  
 `docker run -p 3000:80 --rm nselem/conabioangulardemo`  
-E ir en el navegador a `localhost:3000`  
+Para ver la aplicación hay que ir en el navegador a `localhost:3000`  
 
 Pra trabajar en la producción de la spa (single page application) hice *my-angular-app*, otro github no conectado a docker.
 Puedo pasarle el volumen dist para probar los avances, sin necesidad de mover  nada el Dockerfile.    
